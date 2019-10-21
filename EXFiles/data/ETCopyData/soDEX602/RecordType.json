@@ -4,33 +4,33 @@
 		{
 			"attributes": {
 				"type": "RecordType",
-				"url": "/services/data/v45.0/sobjects/RecordType/012f0000000V9NeAAK"
+				"url": "/services/data/v47.0/sobjects/RecordType/0123F00000162ZCQAY"
 			},
-			"Id": "012f0000000V9NeAAK",
+			"Id": "0123F00000162ZCQAY",
 			"DeveloperName": "Customer"
 		},
 		{
 			"attributes": {
 				"type": "RecordType",
-				"url": "/services/data/v45.0/sobjects/RecordType/012f0000000V9NfAAK"
+				"url": "/services/data/v47.0/sobjects/RecordType/0123F00000162ZDQAY"
 			},
-			"Id": "012f0000000V9NfAAK",
+			"Id": "0123F00000162ZDQAY",
 			"DeveloperName": "Service_Vendor"
 		},
 		{
 			"attributes": {
 				"type": "RecordType",
-				"url": "/services/data/v45.0/sobjects/RecordType/012f0000000V9NgAAK"
+				"url": "/services/data/v47.0/sobjects/RecordType/0123F00000162ZEQAY"
 			},
-			"Id": "012f0000000V9NgAAK",
+			"Id": "0123F00000162ZEQAY",
 			"DeveloperName": "Standard"
 		},
 		{
 			"attributes": {
 				"type": "RecordType",
-				"url": "/services/data/v45.0/sobjects/RecordType/012f0000000V9NhAAK"
+				"url": "/services/data/v47.0/sobjects/RecordType/0123F00000162ZFQAY"
 			},
-			"Id": "012f0000000V9NhAAK",
+			"Id": "0123F00000162ZFQAY",
 			"DeveloperName": "Technician"
 		}
 	],
