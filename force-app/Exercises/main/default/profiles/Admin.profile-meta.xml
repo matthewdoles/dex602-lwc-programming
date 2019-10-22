@@ -15,6 +15,14 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>CourseDeliveries</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>CourseDeliveryLocations</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>CourseTriggerHandler</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -339,6 +347,10 @@
     <tabVisibilities>
         <tab>Course__c</tab>
         <visibility>Hidden</visibility>
+    </tabVisibilities>
+    <tabVisibilities>
+        <tab>Map_Deliveries</tab>
+        <visibility>DefaultOn</visibility>
     </tabVisibilities>
     <tabVisibilities>
         <tab>TripReport__c</tab>

@@ -17,6 +17,10 @@
         <type>CustomTab</type>
     </appMenuItems>
     <appMenuItems>
+        <name>Map_Deliveries</name>
+        <type>CustomTab</type>
+    </appMenuItems>
+    <appMenuItems>
         <name>MyDay</name>
         <type>StandardAppMenuItem</type>
     </appMenuItems>
