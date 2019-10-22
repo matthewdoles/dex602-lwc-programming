@@ -10,6 +10,7 @@ export default class StudentTile extends LightningElement {
 		return this.selected ? "tile selected " : "tile";
 	}
 	studentClick() {
+		// eslint-disable-next-line no-alert
 		alert(this.student.Name);
 	}
 }
