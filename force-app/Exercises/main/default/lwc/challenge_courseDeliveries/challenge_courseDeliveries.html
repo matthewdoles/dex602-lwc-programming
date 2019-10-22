@@ -1,0 +1,12 @@
+<template>
+	<lightning-card title="Recent Worldwide Deliveries" icon-name="utility:world">
+		<div class="slds-p-horizontal_small">
+			<template for:each={deliveries} for:item="delivery">
+				<div key={delivery.value} class="slds-p-around_small">
+                    <h3><strong>{delivery.name}</strong></h3>
+                    {delivery.location} on <lightning-formatted-date-time value={delivery.startDate}></lightning-formatted-date-time>
+                </div>
+			</template>
+		</div>
+	</lightning-card>
+</template>
