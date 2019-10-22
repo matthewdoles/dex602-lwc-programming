@@ -7,8 +7,9 @@ import FIELD_Description from "@salesforce/schema/Contact.Description";
 import FIELD_Email from "@salesforce/schema/Contact.Email";
 import FIELD_Phone from "@salesforce/schema/Contact.Phone";
 const fields = [FIELD_Name, FIELD_Description, FIELD_Email, FIELD_Phone];
+import { NavigationMixin } from 'lightning/navigation';
 
-export default class StudentDetail extends LightningElement {
+export default class StudentDetail extends NavigationMixin(LightningElement) {
 	@track studentId;
 	@wire(CurrentPageReference) pageRef;
 	@wire(getRecord, { recordId: "$studentId", fields })
@@ -36,5 +37,15 @@ export default class StudentDetail extends LightningElement {
 	}
 	_getDisplayValue(data, field) {
 		return getFieldDisplayValue(data, field) ? getFieldDisplayValue(data, field) : getFieldValue(data, field);
+	}
+	handleNavigateRecord() {
+		// Opens the new Course Delivery record modal dialog.
+		this[NavigationMixin.Navigate]({
+			type: "standard__recordPage",
+			attributes: {
+				recordId: this.studentId,
+				actionName: "view"
+			}
+		});
 	}
 }

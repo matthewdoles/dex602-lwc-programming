@@ -11,13 +11,6 @@
         <componentInstances>
             <componentName>studentDetail</componentName>
         </componentInstances>
-        <componentInstances>
-            <componentInstanceProperties>
-                <name>context</name>
-                <value>BOOKMARKS</value>
-            </componentInstanceProperties>
-            <componentName>forceChatter:exposedFeed</componentName>
-        </componentInstances>
         <name>region2</name>
         <type>Region</type>
     </flexiPageRegions>
