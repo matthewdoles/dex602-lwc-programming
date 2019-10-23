@@ -1,10 +1,15 @@
 <template>
-    <c-student-browser-form onfilterchange={handleFilterChange}></c-student-browser-form>
+	<c-student-browser-form onfilterchange={handleFilterChange}></c-student-browser-form>
 	<lightning-tabset variant="scoped">
-        <div class="slds-scrollable scrollerSize" >
-            <lightning-tab label="Gallery">
-                <c-student-tiles student-list={students.data} onstudentselected={handleStudentSelected}></c-student-tiles>
-            </lightning-tab>
-        </div>
-    </lightning-tabset>
+		<div class="slds-scrollable scrollerSize">
+			<lightning-tab label="Gallery">
+				<c-student-tiles student-list={students.data} onstudentselected={handleStudentSelected}></c-student-tiles>
+			</lightning-tab>
+			<lightning-tab label="Grid">
+                <div class="slds-scrollable scrollerSize">
+                    <c-responsive-datatable pk-field="Id" column-config={cols} row-data={students.data}></c-responsive-datatable>
+                </div>
+			</lightning-tab>
+		</div>
+	</lightning-tabset>
 </template>
