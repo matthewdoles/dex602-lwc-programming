@@ -1,0 +1,10 @@
+<template>
+	<lightning-card title="Contact Directory">
+        <lightning-datatable 
+            key-field="contactId" 
+            data={contacts} 
+            columns={columnConfig}
+            hide-checkbox-column="false" >
+        </lightning-datatable>
+	</lightning-card>
+</template>
