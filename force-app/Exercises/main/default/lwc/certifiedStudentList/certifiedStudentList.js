@@ -5,6 +5,7 @@ export default class CertifiedStudentList extends LightningElement {
 	@api certificationId = 0;
 	@api certificationName = "";
 	@track certifiedStudents;
+	@track btnGroupDisabled = "disabled";
 	error;
 
 	columnConfig = [
@@ -47,5 +48,10 @@ export default class CertifiedStudentList extends LightningElement {
 		} else if (result.error) {
 			this.error = result.error;
 		}
-	}
+    }
+    
+    onRowSelection(event) {
+        let numSelected = event.detail.selectedRows.length;
+        this.btnGroupDisabled = (numSelected === 0);
+    }
 }
