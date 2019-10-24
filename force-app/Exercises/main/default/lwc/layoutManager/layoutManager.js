@@ -11,7 +11,7 @@ export default class LayoutManager extends LightningElement {
 	@track certificationName = "";
 	@track certificationId = 0;
 	@track modalHeader = "";
-	@track modalContent = ""; 
+	@track modalContent = "";
 
 	handleNavItemSelected(event) {
 		const selectedItemName = event.detail.itemName;
