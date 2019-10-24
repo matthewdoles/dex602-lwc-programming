@@ -2,8 +2,8 @@ import { LightningElement, track, wire } from "lwc";
 import getStudents from "@salesforce/apex/StudentBrowser.getStudents";
 import { fireEvent } from "c/pubsub";
 import { CurrentPageReference } from "lightning/navigation";
-
-export default class StudentBrowser extends LightningElement {
+import { NavigationMixin } from "lightning/navigation";
+export default class StudentBrowser extends NavigationMixin(LightningElement) {
 	@track selectedInstructorId;
 	@track selectedDeliveryId;
 
@@ -23,6 +23,17 @@ export default class StudentBrowser extends LightningElement {
 	}
 	updateSelectedStudent(studentId) {
 		fireEvent(this.pageRef, "studentChange", { studentId });
+	}
+	handleRowDblClick(event) {
+		const studentId = event.detail.pk;
+		this[NavigationMixin.Navigate]({
+			type: "standard__recordPage",
+			attributes: {
+				recordId: studentId,
+				objectApiName: "Contact",
+				actionName: "edit"
+			}
+		});
 	}
 	cols = [
 		{
