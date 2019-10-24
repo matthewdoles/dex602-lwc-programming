@@ -24,6 +24,10 @@ export default class StudentBrowser extends NavigationMixin(LightningElement) {
 	updateSelectedStudent(studentId) {
 		fireEvent(this.pageRef, "studentChange", { studentId });
 	}
+	handleRowClick(event) {
+		let studentId = event.detail.pk;
+		this.updateSelectedStudent(studentId);
+	}
 	handleRowDblClick(event) {
 		const studentId = event.detail.pk;
 		this[NavigationMixin.Navigate]({
