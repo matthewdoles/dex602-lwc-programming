@@ -22,16 +22,15 @@ export default class StudentBrowser extends NavigationMixin(LightningElement) {
 		this.updateSelectedStudent(studentId);
 	}
 	updateSelectedStudent(studentId) {
-		fireEvent(this.pageRef, "studentChange", { studentId });
-		let grid = this.template.querySelector('c-responsive-datatable');
-		let gallery = this.template.querySelector('c-student-tiles');
+		let grid = this.template.querySelector("c-responsive-datatable");
+		let gallery = this.template.querySelector("c-student-tiles");
+		if (gallery) {
+			gallery.setSelectedStudent(studentId);
+		}
 		if (grid) {
 			grid.setSelectedRecord(studentId);
 		}
-		if (gallery) {
-			gallery.setSelectedRecord(studentId);
-		}
-		fireEvent(this.pageRef, 'studentChange', { studentId });
+		fireEvent(this.pageRef, "studentChange", { studentId });
 	}
 	handleRowClick(event) {
 		let studentId = event.detail.pk;

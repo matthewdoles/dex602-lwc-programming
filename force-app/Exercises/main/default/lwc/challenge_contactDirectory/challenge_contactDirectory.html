@@ -1,10 +1,33 @@
 <template>
 	<lightning-card title="Contact Directory">
-        <lightning-datatable 
-            key-field="contactId" 
-            data={contacts} 
-            columns={columnConfig}
-            hide-checkbox-column="false" >
-        </lightning-datatable>
+		<lightning-button-menu slot="actions" onselect={handleButtonMenuSelect}>
+			<lightning-menu-item value="A" label="A"></lightning-menu-item>
+			<lightning-menu-item value="B" label="B"></lightning-menu-item>
+			<lightning-menu-item value="C" label="C"></lightning-menu-item>
+			<lightning-menu-item value="D" label="D"></lightning-menu-item>
+			<lightning-menu-item value="E" label="E"></lightning-menu-item>
+			<lightning-menu-item value="F" label="F"></lightning-menu-item>
+			<lightning-menu-item value="G" label="G"></lightning-menu-item>
+			<lightning-menu-item value="H" label="H"></lightning-menu-item>
+			<lightning-menu-item value="I" label="I"></lightning-menu-item>
+			<lightning-menu-item value="J" label="J"></lightning-menu-item>
+			<lightning-menu-item value="K" label="K"></lightning-menu-item>
+			<lightning-menu-item value="L" label="L"></lightning-menu-item>
+			<lightning-menu-item value="M" label="M"></lightning-menu-item>
+			<lightning-menu-item value="N" label="N"></lightning-menu-item>
+			<lightning-menu-item value="O" label="O"></lightning-menu-item>
+			<lightning-menu-item value="P" label="P"></lightning-menu-item>
+			<lightning-menu-item value="Q" label="Q"></lightning-menu-item>
+			<lightning-menu-item value="R" label="R"></lightning-menu-item>
+            <lightning-menu-item value="S" label="S"></lightning-menu-item>
+            <lightning-menu-item value="T" label="T"></lightning-menu-item>
+            <lightning-menu-item value="U" label="U"></lightning-menu-item>
+            <lightning-menu-item value="V" label="V"></lightning-menu-item>
+            <lightning-menu-item value="W" label="W"></lightning-menu-item>
+            <lightning-menu-item value="X" label="X"></lightning-menu-item>
+            <lightning-menu-item value="Y" label="Y"></lightning-menu-item>
+            <lightning-menu-item value="Z" label="Z"></lightning-menu-item>
+		</lightning-button-menu>
+		<lightning-datatable key-field="contactId" data={contacts} columns={columnConfig} hide-checkbox-column="false"> </lightning-datatable>
 	</lightning-card>
 </template>

@@ -22,6 +22,9 @@ export default class Challenge_contactDirectory extends LightningElement {
 			this.error = result.error;
 		}
 	}
+	handleButtonMenuSelect(event) {
+		this.firstLetter = event.detail.value;
+	}
 
 	columnConfig = [
 		{
