@@ -2,12 +2,12 @@ import { LightningElement, track, wire } from "lwc";
 import getContacts from "@salesforce/apex/Contacts.getContacts";
 
 export default class Challenge_contactDirectory extends LightningElement {
-    @track contacts;
-    @track firstLetter;
-    error;
+	@track contacts;
+	@track firstLetter = "";
+	error;
 
-    @wire(getContacts, { firstLetter: "$firstLetter" })
-    wired_getContacts(result) {
+	@wire(getContacts, { firstLetter: "$firstLetter" })
+	wired_getContacts(result) {
 		this.contacts = [];
 		if (result.data) {
 			result.data.forEach(contact => {
