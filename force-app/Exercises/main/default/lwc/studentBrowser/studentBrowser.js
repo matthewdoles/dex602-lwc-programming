@@ -4,8 +4,8 @@ import { fireEvent } from "c/pubsub";
 import { CurrentPageReference } from "lightning/navigation";
 import { NavigationMixin } from "lightning/navigation";
 export default class StudentBrowser extends NavigationMixin(LightningElement) {
-	@track selectedInstructorId;
-	@track selectedDeliveryId;
+	@track selectedInstructorId = "";
+	@track selectedDeliveryId = "";
 
 	@wire(CurrentPageReference) pageRef;
 
