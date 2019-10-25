@@ -118,9 +118,11 @@ export default class TripReportFormAdvanced extends LightningElement {
 	onReviewChange(event) {
 		this.review = event.target.value;
 	}
-
 	onSave() {
 		this.saveTripReport();
+	}
+	onCancel() {
+		this.returnToBrowseMode();
 	}
 	saveTripReport() {
 		const fieldsToSave = {};
@@ -181,10 +183,10 @@ export default class TripReportFormAdvanced extends LightningElement {
 	}
 
 	returnToBrowseMode() {
-		const evt = new CustomEvent('tripreportmodechange', {
+		const evt = new CustomEvent("tripreportmodechange", {
 			detail: {
 				mode: "browse"
-			},
+			}
 		});
 		this.dispatchEvent(evt);
 	}
