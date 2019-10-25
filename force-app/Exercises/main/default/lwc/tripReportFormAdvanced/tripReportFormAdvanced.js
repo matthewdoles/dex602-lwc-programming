@@ -38,6 +38,8 @@ export default class TripReportFormAdvanced extends LightningElement {
 	@track rating;
 	@track review;
 
+	@track saveButtonDisabled;
+
 	//TODO #3: following the examples of and FIELD_DATE and FIELD_INSTRUCTOR, import the name, rating, review type, and review fields
 	@wire(getRecord, { recordId: "$recordId", fields: fieldsToLoad })
 	wiredTripReport({ error, data }) {
@@ -134,13 +136,13 @@ export default class TripReportFormAdvanced extends LightningElement {
 		if (!this.recordId) {
 			//todo #6: When creating a new record, define an object named recordInput with two property:
 			//---fields, which contains the fieldsToSave object
-            //---apiName, which contains the api name of the trip report object
-            const recordInput = { fields:fieldsToSave, apiName: OBJECT_TRIP_REPORT.objectApiName};
+			//---apiName, which contains the api name of the trip report object
+			const recordInput = { fields: fieldsToSave, apiName: OBJECT_TRIP_REPORT.objectApiName };
 
 			createRecord(recordInput)
 				.then(tripReport => {
 					//TODO #7: after record creation, store the new ID of the trip report in our recordId property
-                    this.recordId = tripReport.Id;
+					this.recordId = tripReport.Id;
 					Utils.showToast(this, "Success", "Trip Report Created", "success");
 				})
 				.catch(error => {
@@ -149,7 +151,7 @@ export default class TripReportFormAdvanced extends LightningElement {
 		} else {
 			//TODO #8: when doing an update, add the recordId to our fieldsToSave object
 			//so that the system knows which record to update
-            fieldsToSave[FIELD_ID.fieldApiName] = this.recordId;
+			fieldsToSave[FIELD_ID.fieldApiName] = this.recordId;
 			const recordInput = { fields: fieldsToSave };
 			updateRecord(recordInput)
 				.then(() => {
@@ -159,5 +161,20 @@ export default class TripReportFormAdvanced extends LightningElement {
 					Utils.showToast(this, "Error updating record", error.body.message, "error");
 				});
 		}
+	}
+
+	validateFields() {
+		let field = null;
+		let fields = this.template.querySelectorAll(".validateMe");
+		let result = true;
+		for (let i = 0; i < fields.length; i++) {
+			field = fields[i];
+			result = field.checkValidity();
+			if (!result) break;
+		}
+		return result;
+	}
+	onBlur() {
+		this.saveButtonDisabled = !this.validateFields();
 	}
 }
