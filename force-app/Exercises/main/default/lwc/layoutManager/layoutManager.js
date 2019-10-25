@@ -12,6 +12,7 @@ export default class LayoutManager extends LightningElement {
 	@track certificationId = 0;
 	@track modalHeader = "";
 	@track modalContent = "";
+	@track loading = false;
 
 	handleNavItemSelected(event) {
 		const selectedItemName = event.detail.itemName;
@@ -57,5 +58,12 @@ export default class LayoutManager extends LightningElement {
 
 	connectedCallback() {
 		utils.showToast(this, "Welcome", "Don't forget to check back here for updated class schedules and assignments", "info");
+	}
+
+	handleLoading() {
+		this.loading = true;
+	}
+	handleDoneLoading() {
+		this.loading = false;
 	}
 }
