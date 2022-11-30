@@ -1,14 +1,5 @@
-# SFDX  App
+### dex602-lwc-programming
 
-## Dev, Build and Test
-
-
-## Resources
-
-
-## Description of Files and Directories
-
-
-## Issues
+Follow along code for the official Salesforce LWC Programming course (DEX602).
 
 
